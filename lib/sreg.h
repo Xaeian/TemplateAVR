@@ -10,8 +10,6 @@
 #define	SPI_SCK 5
 
 void SREG_Init();
-void SREG_Stop();
-void SREG_Start();
 void SREG_Sign(uint8_t position, uint8_t sign, bool dot);
 void SREG_Int(int16_t value);
 

@@ -5,18 +5,12 @@
 
 int main(void)
 {
-  // init();
-  DDRD |= (1 << 3);
-  DDRB |= (1 << 2);
+  SREG_Init();
 
-  while (1)
-  {
-    // loop();
-    _delay_ms(200);
-    PORTD |= (1 << 3);
-    PORTB &= ~(1 << 2);
-    _delay_ms(200);
-    PORTD &= ~(1 << 3);
-    PORTB |= (1 << 2);
-  }
+  PORTY[0] = 1;
+  PORTY[1] = 2;
+  PORTY[2] = 3;
+  PORTY[3] = 4;
+
+  while(1);
 }
