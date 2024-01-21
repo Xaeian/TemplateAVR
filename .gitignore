@@ -1,0 +1,4 @@
+main.elf
+main.hex
+main.o
+lib/sreg-final.c
