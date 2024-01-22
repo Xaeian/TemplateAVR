@@ -46,6 +46,20 @@ ISR(SPI_STC_vect)
 
 void SREG_Sign(uint8_t position, uint8_t sign, bool dot)
 {
+  // if(sign == 1) {
+  //   PORTY[position] = 0x06;
+  // }
+
+  switch(sign)
+  {
+    case 1: case '1': PORTY[position] = 0x06; break;
+    case 2: PORTY[position] = 0x2F; break;
+    case 4: PORTY[position] = 0x37; break;
+          // statements executed if expression does not equal
+          // any case constant_expression
+  }
+
+
   // TODO:
   // Napisz funkcję, która na konkretnym wyświetlaczu o pozycji `position`
   // wyświetla znak `sign`. Znak może być podany jako liczba lub w kodzie ASCII.

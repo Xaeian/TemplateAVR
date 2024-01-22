@@ -3,6 +3,11 @@
 #include <util/delay.h>
 #include "lib/sreg.h"
 
+// PB5 --> SCK
+// PB4 --> SO
+// PB3 --> SI
+// PB2 --> CS
+
 int main(void)
 {
   SREG_Init();
