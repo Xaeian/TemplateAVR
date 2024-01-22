@@ -2,15 +2,17 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "lib/sreg.h"
+#include "lib/adc.h"
+
+// PC2 (ADC2) ⟶ POT | JOY | MIC | FT | ...
 
 int main(void)
 {
   SREG_Init();
-
-  PORTY[0] = 1;
-  PORTY[1] = 2;
-  PORTY[2] = 3;
-  PORTY[3] = 4;
-
-  while(1);
+  ADC_Init();
+  
+  while(1) {
+    uint16_t value = ADC_Run(2);
+    SREG_Int(value);
+  }
 }
